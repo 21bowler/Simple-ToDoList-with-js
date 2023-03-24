@@ -13,7 +13,7 @@ const C = document.getElementById('tasks');
 function addTask (e){
     e.preventDefault();
     // if(B.value === '') return;
-    const task = createTask(B.value);
+    const task = createTask(B.value); //placed the function inside task variable
     C.appendChild(task);
     B.value = '';
 }
@@ -25,7 +25,7 @@ function createTask (taskName) {
     task.innerHTML = `
         <input type="checkbox">
         <label> ${taskName}</label>
-        <span class="delete"> X </span>
+        <span class="delete">&times;</span>
     `;
 
     // adding delete button
