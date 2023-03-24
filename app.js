@@ -1,30 +1,48 @@
-const input = document.getElementById('inputArea');
-const btn = document.getElementById('btn');
-const list = document.getElementById('todoList');
+const A = document.getElementById('task-area');
+// const btn = document.getElementById('btn');
+const B = document.getElementById('single-task');
+const C = document.getElementById('tasks');
 
 // styling the Input
-input.style.padding = '5px ';
+// input.style.padding = '5px ';
 
 // styling the add button
 // btn.style.textTransform = 'uppercase';
 
-btn.addEventListener('click', (e) => {
+// adding a list
+function addTask (e){
     e.preventDefault();
-    let val = input.value;
-    // creating a new paragraph
-    let paragraph = document.createElement('p');
-    list.appendChild(paragraph);
-    paragraph.innerText = val;
-    paragraph.addEventListener('dblclick', () => {
-        paragraph.style.textDecoration = 'line-through';
-        paragraph.style.cursor = 'pointer';
-    })
-    
+    // if(B.value === '') return;
+    const task = createTask(B.value);
+    C.appendChild(task);
+    B.value = '';
+}
 
-    // removes the value inside the iput when added
-    input.value = '';
-    
-})
+// creating a new list element
+function createTask (taskName) {
+    const task = document.createElement('li');
+    task.classList.add('task');
+    task.innerHTML = `
+        <input type="checkbox">
+        <label> ${taskName}</label>
+        <span class="delete"> X </span>
+    `;
+
+    // adding delete button
+
+    const deleteBtn = task.querySelector('.delete');
+    deleteBtn.addEventListener('click', deleteTask);
+
+    return task;
+}
+
+//deleting a task from the list
+
+function deleteTask(e){
+    e.target.parentElement.remove();
+}
+
+A.addEventListener('submit', addTask);
 
 
 

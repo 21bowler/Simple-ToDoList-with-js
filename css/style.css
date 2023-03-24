@@ -11,4 +11,57 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(45deg,#42275a, #734b6d );
+    min-height: 100vh;
+}
+
+main{
+    /* border: 1px solid; */
+    padding: 50px 25px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    border-radius: 12px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.input {
+    padding: 8px 5px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    width: 400px
+}
+button {
+    padding: 8px 8px;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'Arima', cursive;
+    font-weight: 600;
+    background: #42275a;
+    border-radius: 12px;
+    cursor: pointer;
+}
+button:hover {
+    background: linear-gradient(45deg,#42275a, #734b6d );
+    color: #fff;
+}
+.task {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    /* background: ; */
+    color: #fff;
+    list-style: none;
+
+}
+.task input[type="checkbox"]{
+    display: none;
+}
+
+.task .delete {
+    color: red;
+    cursor: pointer;
+    font-size: 30px;
+    float: right;
 }
